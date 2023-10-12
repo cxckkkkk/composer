@@ -21,7 +21,7 @@ Thumbs.db
 bar.png
 bar.jpg
 # composer vendor dir
-vendor
+/vendor
 
 # composer itself is not needed
 composer.phar

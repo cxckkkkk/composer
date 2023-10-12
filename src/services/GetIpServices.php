@@ -8,9 +8,8 @@ class GetIpServices extends Base{
 
     //api 获取代理 四叶天
     //https://www.siyetian.com/apis.html
-    public function apiSiyecao(){
+    public function apiSiyecao($url){
         try{
-            $url = \Yii::$app->params['apiSiyecao'];
             //json
             $data = $this->curl($url);
             $data = json_decode($data,true);

@@ -16,11 +16,5 @@
         "psr-4" : {
             "CxcCommon\\": "src/"
         }
-    },
-    "repositories": [
-    {
-        "type": "vsc",
-        "url": "git@github.com:cxckkkkk/composer.git"
     }
-]
 }

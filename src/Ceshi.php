@@ -4,7 +4,7 @@ namespace CxcCommon;
 
 class Ceshi
 {
-    //2
+    //3
     public function index(){
         echo 'index';
     }

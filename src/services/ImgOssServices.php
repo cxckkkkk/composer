@@ -2,6 +2,7 @@
 namespace CxcCommon\services;
 use common\models\Logs;
 use common\services\AliossService;
+use common\services\ChromeService;
 
 //oss 图片处理
 class ImgOssServices extends Base{
@@ -65,10 +66,10 @@ class ImgOssServices extends Base{
                 // $imgurlxin 网络图片路径
                 // $filecachs 新的图片路径
 
-                $imgs = $this->ChromeService->getCurlDaili($imgurlxin,['pac'=>false]);
+                $imgs = ChromeService::getSingleton()->getCurlDaili($imgurlxin,['pac'=>false]);
 
                 if($imgs['code'] != 200){
-                    Logs::setLogs($imgs['msg'],10,__METHOD__);
+                    Logs::setLogs('imgOss 图片下载失败',10,__METHOD__);
                     //没有下载成功的图片，用本地的默认空白图片来代替
                     $data = str_replace($imgurl,\Yii::$app->params['url']['wcss'].'/images/null.jpg',$data);
                     continue;
